@@ -50,6 +50,7 @@ php artisan vendor:publish --tag=essentials-config
 - [Fake Sleep](#-fake-sleep)
 - [Artisan Commands](#-artisan-commands)
   - [make:action](#makeaction)
+  - [make:dto](#makedto)
   - [essentials:pint](#essentialspint)
   - [essentials:rector](#essentialsrector)
 
@@ -161,6 +162,34 @@ final readonly class CreateUserAction
 ```
 
 Actions help organize business logic in dedicated classes, promoting single responsibility and cleaner controllers.
+
+#### `make:dto`
+
+Quickly generates dto classes in your Laravel application:
+
+```bash
+php artisan make:dto CreateUserDTO
+```
+
+This creates a clean DTO class at `app/DTOs/CreateUserDTO.php`:
+
+```php
+<?php
+
+declare(strict_types=1);
+
+namespace App\DTOs;
+
+final readonly class CreateUserDTO
+{
+    public function __construct()
+    {
+        //
+    }
+}
+```
+
+DTOs (Data Transfer Objects) encapsulate and transport data between layers—keeping business logic elsewhere—so controllers stay lean and single-purpose.
 
 #### `essentials:pint`
 
